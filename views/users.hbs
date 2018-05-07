@@ -1,0 +1,20 @@
+{{#if user}}
+<p>{{user.username}} have logged in</p>
+<a href="/logout">logout</a>
+<form action="/changepassword" method="POST">
+    <input type="text" name="username">
+    <input type="password" name="new_password">
+    <input type="submit" value="change password">
+</form>
+{{else}}
+<form action="/login" method="post">
+    <input type="text" name="username">
+    <input type="password" name="password"> {{firstNum}} + {{secondNum}} =
+    <input type="text" name="vSum">
+    <input type="submit" value="login">
+</form>
+{{/if}}
+<a href="/register">register page</a>
+{{#if message}}
+<p>{{message}}</p>
+{{/if}}
