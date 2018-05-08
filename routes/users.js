@@ -73,12 +73,20 @@ router.get('/changepassword', function(req, res) {
   res.locals.user = req.session.user || "";
   res.render('changepassword');
 })
-router.post('/changepassword', manager, function(req, res) {
+router.post('/changepassword', manager, async function(req, res) {
   const {username, new_password} = req.body;
   //console.log(users[username])
   if (username == "admin") {
-    users[username].password = new_password;
+    //console.log(users.username);
+    //users.username.password = new_password;
+    //update the database
+    try {
+    await userData.updateUser(username, new_password);
+    } catch (e) {
+      console.log(e);
+    }
   }
+  res.redirect('back');
   //console.log(users[username])
 })
 module.exports = router;

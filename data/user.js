@@ -37,7 +37,18 @@ async function checkUser(username, password, confirm) {
     return username;
 }
 
+async function updateUser(username, new_password) {
+    if (!username || !new_password) {
+        throw ("Invalid username or password");
+        return;
+    }
+    //update
+    await User.findOneAndUpdate({username: username}, {password: new_password});
+    return;
+}
+
 module.exports = {
     checkUser,
-    getUser
+    getUser,
+    updateUser
 }
