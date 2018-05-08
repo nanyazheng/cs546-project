@@ -69,6 +69,10 @@ function manager(req, res, next) {
     next(new Error("you dont have the authority to change the password"));
   }
 }
+router.get('/changepassword', function(req, res) {
+  res.locals.user = req.session.user || "";
+  res.render('changepassword');
+})
 router.post('/changepassword', manager, function(req, res) {
   const {username, new_password} = req.body;
   //console.log(users[username])

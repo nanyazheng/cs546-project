@@ -1,20 +1,56 @@
-{{#if user}}
-<p>{{user.username}} have logged in</p>
-<a href="/logout">logout</a>
-<form action="/changepassword" method="POST">
-    <input type="text" name="username">
-    <input type="password" name="new_password">
-    <input type="submit" value="change password">
-</form>
-{{else}}
-<form action="/login" method="post">
-    <input type="text" name="username">
-    <input type="password" name="password"> {{firstNum}} + {{secondNum}} =
-    <input type="text" name="vSum">
-    <input type="submit" value="login">
-</form>
-{{/if}}
-<a href="/register">register page</a>
-{{#if message}}
-<p>{{message}}</p>
-{{/if}}
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bbb" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">
+                    <span class="glyphicon glyphicon-picture"></span>Home</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bbb">
+                <ul class="nav navbar-nav navbar-right">
+                    {{#if user}}
+                    <li>
+                        <a href="/logout">logout</a>
+                    </li>
+                    <li>
+                        <a href="/changepassword">Password Change</a>
+                    </li>
+                    {{else}}
+                    <li>
+                        <a href="/login">Log in</a>
+                    </li>
+                    {{/if}}
+                    <li>
+                        <a href="/register">Sign up</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            {{#if user}}
+            <h2>{{user.username}} have logged in</h2>
+            {{else}}
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="username">
+                <input type="password" name="password" placeholder="password"> {{firstNum}} + {{secondNum}} =
+                <input type="text" name="vSum" placeholder="sum to verify">
+                <input type="submit" value="login">
+            </form>
+            {{/if}} {{#if message}}
+            <p>{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
