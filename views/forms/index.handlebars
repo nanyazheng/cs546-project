@@ -1,0 +1,38 @@
+<section>
+
+  <div class='main-body'>
+
+  <div class='left-bar'>
+    <div class='left-bar-title'>
+      <div class='left-bar-cat'>
+      Categories
+      </div>
+      <div class="button-list">
+      <button class="cat-button" data-filter='all'> Show all</button>
+      <button class="cat-button" data-filter='burger'> Burger</button>
+      <button class="cat-button" id='cat-button-rice' data-filter='fried_rice'> Fried Rice</button>
+      <button class="cat-button" data-filter='noodle'> Noodle</button>
+      <button class="cat-button" data-filter='pizza'> Pizza</button>
+      </div>
+      </div>
+    </div>
+  
+  <div class="dish_list">
+      {{#each data}}
+    <ul>
+        <div class="dish_single {{this.category}}">
+          <div class='dish_single_name'>{{this.name}}</div>
+          {{!-- <div class='dish_single_category'>{{this.category}}</div> --}}
+          <div class='dish_single_price'><strong>Price:</strong> {{this.price}}</div>
+          <div class='dish_single_description'><strong>Description:</strong> {{this.description}}</div>
+        {{!-- <form action="/result" method="POST" class="new-post-form"> --}}
+        
+        <button class='dish_single_add' type="button" dish-id='{{this._id}}' dish-name='{{this.name}}' dish-price='{{this.price}}'>Order</button>
+        {{!-- </form> --}}
+        </div>
+    </ul>
+    {{/each}}
+  </div>
+
+  </div>
+</section>

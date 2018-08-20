@@ -1,0 +1,77 @@
+<article>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bbb" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/private" class="navbar-brand">
+                    Back</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bbb">
+                <ul class="nav navbar-nav navbar-right">
+                    {{#if user}}
+                    <li>
+                        <a href="/logout">Log Out</a>
+                    </li>
+                    <li>
+                        <a href="/changepassword">Password Change</a>
+                    </li>
+                    {{else}}
+                    <li>
+                        <a href="/login">Log in</a>
+                    </li>
+                    {{/if}}
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <form id="dish-form" action="/dish/modify/{{id}}" method="post">
+        <table class="dish">
+            <tr>
+                <td>
+                    <label for="name">Name:</label>
+                </td>
+                <td>
+                    <input type="text" name="name" id="name" value="{{name}}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="category">Category:</label>
+                </td>
+                <td>
+                    <input type="text" name="category" id="category" value="{{category}}" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="price">Price:</label>
+                </td>
+                <td>
+                    <input type="text" name="price" id="price" value="{{price}}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="description">Description:</label>
+                </td>
+                <td>
+                    <input type="text" name="description" id="description" value="{{description}}">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td align="center">
+                    <button type="submit" value="Submit">Modify</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</article>

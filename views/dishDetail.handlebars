@@ -1,0 +1,83 @@
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bbb" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/private" class="navbar-brand">
+                    Back</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bbb">
+                <ul class="nav navbar-nav navbar-right">
+                    {{#if user}}
+                    <li>
+                        <a href="/logout">Log Out</a>
+                    </li>
+                    <li>
+                        <a href="/changepassword">Password Change</a>
+                    </li>
+                    {{else}}
+                    <li>
+                        <a href="/login">Log in</a>
+                    </li>
+                    {{/if}}
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="dish-detail">
+    <table class="dish">
+        <tr>
+            <td>
+                <label for="name">Name:</label>
+            </td>
+            <td>
+                <p name="name" id="name">{{dish.name}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="category">Category:</label>
+            </td>
+            <td>
+                <p name="category" id="category">{{dish.category}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="price">Price:</label>
+            </td>
+            <td>
+                <p name="price" id="price">{{dish.price}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="description">Description: </label>
+            </td>
+            <td>
+                <p name="description" id="description">{{dish.description}}</p>
+            </td>
+        </tr>
+    </table>
+    <div class="action">
+        <form action="/dish/delete" method="post" style="display: inline-block;">
+            <input type="text" name="dishid" value="{{dish._id}}" hidden/>
+            <button class="delete-button" type="submit">Delete This Dish</button>
+        </form>
+        <form action="/dish/modify" method="post" style="display: inline-block;">
+            <input type="text" name="dishid" value="{{dish._id}}" hidden/>
+            <input type="text" name="dishname" value="{{dish.name}}" hidden/>
+            <input type="text" name="dishcategory" value="{{dish.category}}" hidden/>
+            <input type="text" name="dishprice" value="{{dish.price}}" hidden/>
+            <input type="text" name="dishdescription" value="{{dish.description}}" hidden/>
+            <button class="modify-button" type="submit">Modify This Dish</button>
+        </form>
+    </div>
+</div>

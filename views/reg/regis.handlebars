@@ -1,0 +1,154 @@
+ 
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bbb" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/see_menu" class="navbar-brand">
+                    <span></span>See Menu</a>
+            </div>
+            {{!-- <div class="collapse navbar-collapse" id="bbb">
+                <ul class="nav navbar-nav navbar-right">
+                    {{#if user}}
+                    <li>
+                        <a href="/logout">logout</a>
+                    </li>
+                    <li>
+                        <a href="/changepassword">Password Change</a>
+                    </li>
+                    {{else}}
+                    <li>
+                        <a href="/login">Log in</a>
+                    </li>
+                    {{/if}}
+                    <li>
+                        <a href="/register">Sign up</a>
+                    </li>
+
+                </ul>
+            </div> --}}
+        </div>
+    </nav>
+    {{!-- <div class="container">
+        <div class="jumbotron">
+            <form action="/register" method="POST">
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td>
+                    <input type="text" name="username" placeholder="username">                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>   
+                <input type="password" name="password" placeholder="password">                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Confirm</td>
+                    <td>
+                <input type="password" name="confirm" placeholder="confirm">                
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" name="firstname"></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" name="lastname"></td>
+                </tr>
+                <tr>
+                    <td>Set a question</td>
+                    <td>
+                        <select id="select" name="question">
+                        <option value="color">What color do you like? </option>
+                        <option value="food">What is your favorate food?</option>
+                        <option value="birthday">When is your birthday?</option>
+                        <option value="lucky">What is your lucky number?</option>
+                    </select>
+                    </td>  
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td><input type="text" name="answer"></td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td><input type="submit" value="signup"></td>
+                </tr>
+                
+            </table>
+                
+            {{!-- </form>
+            {{#if message}}
+            <p>{{message}}</p>
+            {{/if}} --}}
+        {{!-- </div> --}}
+    {{!-- </div> --}}
+
+
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        {{#if message}}
+            <div class="alert alert-info">
+            <p>{{message}}</p>
+            </div>
+        {{/if}}
+
+        <form action="/register" method="post">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="philbarrassi" class="form-control">
+            </div>
+             <div class="form-group">
+                <label>Email</label>
+                <input type="text" name="email" placeholder="xxx@stevens.edu" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="firstname" placeholder="Phil" class="form-control">
+            </div>
+             <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="firstname" placeholder="Ba" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Your Password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Confirm</label>
+                <input type="password" name="confirm" placeholder="Your Password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Question</label>
+                <select id="select_change" name="question">
+                        <option value="color">What is your favorite color? </option>
+                        <option value="food">What is your favorite food?</option>
+                        <option value="birthday">When is your birthday?</option>
+                        <option value="lucky">What is your lucky number?</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label>Answer</label>
+                <input type="text" name="answer" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary" value ="signup">Sign Up</button>
+            <p>Already have an account? <a href="/login">Log In</a></p>
+        </form>
+    </div>
+</div> 
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+

@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+  }
+
+div {
+    display:block;
+}
+
+body {
+	font-family: Georgia, serif;
+    font-size: 12pt;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.top-bar {
+    overflow: hidden;
+    background-color: rgb(16, 135, 182);
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.bottom-bar {
+    overflow: hidden;
+    background-color: rgb(16, 135, 182);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.main-body {
+    display:flex;
+    padding: 16px;
+    margin-top: 5%;
+    width:100%;
+    
+}
+
+
+
+h1 {
+    display:inline;
+}
+
+.dish_list {
+    float:left;
+    margin-left:5%;
+    width:100%;
+    padding: 5px;
+    vertical-align:top;
+}
+
+.dish_list {
+    border-left: 1px solid;
+    border-left-color:grey;
+    vertical-align:top;
+    opacity:50%;
+}
+
+.left-bar{
+    
+    float:left;
+     margin-right:5px; 
+    padding-right:20px; 
+    
+    vertical-align:top;
+}
+
+.cat-button {
+    border: none;
+    display:block;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    width:100%;
+  }
+
+.profile-icon, .shop-cart-icon{
+    vertical-align:top;
+    float:right;
+    width:5%;
+    height:3%;
+}
+
+.check-out-button {
+    float:right;
+    vertical-align:bottom;
+    background-color: #4CAF50;
+    
+    color: rgb(0, 0, 0);
+    padding: 3%;
+    text-align: center;
+}
+.check-out-button:hover {
+    background-color:yellow;
+}
+
+.check-out {
+    float:right;
+    background-color: #4CAF50;
+    width:30%;
+    height:10%;
+}
+
+.left-bar-cat {
+    font-size:14pt;
+    font-weight:bold;
+    margin-bottom:10%;
+}
+
+.dish_single {
+    border-bottom:1px solid;
+}
+
+.dish_single_name, .dish_single_price, .dish_single_description {
+    margin-bottom:10px;
+}
+.dish_single_name {
+    font-size:14pt;
+}
+.dish_single_add {
+    margin-bottom:20px;
+    font-style:sans-serif
+}
+
+.top-title {
+    text-decoration: none;
+    color:black;
+    
+}
+
+.top-title-word {
+    float:left;
+    vertical-align:middle;
+    margin-top:1%;
+}
+
+.profile-body-title, .profile-body-username, .profile-body-name, .profile-body-email, .profile-body-signup {
+    display:block;
+    text-decoration:bold;
+    margin-bottom:5%;
+}
+
+
+.profile-body-title {
+    font-size:300%;
+}
+
+.profile-body-icon {
+
+    float:left;
+}
+
+.order_now {
+    font-size: 30pt; 
+    
+}

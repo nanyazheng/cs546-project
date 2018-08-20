@@ -1,0 +1,39 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bbb" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/private" class="navbar-brand">
+                    Back</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bbb">
+                <ul class="nav navbar-nav navbar-right">
+                    {{#if user}}
+                    <li>
+                        <a href="/logout">Log Out</a>
+                    </li>
+                    <li>
+                        <a href="/changepassword">Password Change</a>
+                    </li>
+                    {{else}}
+                    <li>
+                        <a href="/login">Log in</a>
+                    </li>
+                    {{/if}}
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div>
+    {{#each dishes}}
+        <ul>
+        <a href="/dish/{{_id}}"><li>{{name}}</li></a>
+        </ul>
+    {{/each}}
+</div>

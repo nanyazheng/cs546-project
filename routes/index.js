@@ -1,9 +1,26 @@
-var express = require('express');
-var router = express.Router();
+const profileRoutes = require('./profile');
+const formRoutes = require("./forms");
+const path = require("path");
+const dishRoute = require('./dish');
+const checkOutRoutes = require("./check-out");
+//register
+var usersRouter = require('./users'); //user route js not yet
+//
+//back end not yet 
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const constructorMethod = app => {
+  //app.use("/result", resultRoutes);
+  //register
+  app.use("/", usersRouter); 
+  //
+  app.use("/see_menu", formRoutes);
+  app.use("/profile", profileRoutes);
+  app.use("/dish", dishRoute);
+  app.use("/check-out", checkOutRoutes);
 
-module.exports = router;
+  app.use("*", (req, res) => {
+    res.status(404).json({ error: "Page Not Found" });
+  });
+};
+
+module.exports = constructorMethod;

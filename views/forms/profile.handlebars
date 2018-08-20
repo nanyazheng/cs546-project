@@ -1,0 +1,47 @@
+<section>
+  {{!-- <div class='top-bar'>
+    <div class='top-title-word'>
+    <a href='/see_menu' class='top-title'>
+    <h1>{{title}}</h1>
+    </a></div>
+    <a href="/profile">
+    <img class='profile-icon' alt="profile-icon" src="public/images/profile-icon.png">
+    </a>
+  </div> --}}
+
+  <div class='main-body'>
+  
+  <div class='profile-main'>
+    <div class='profile-body-title'>
+    User Profile
+  </div>
+  <div class='profile-body-username'>
+    Username: {{data.username}}
+  </div>
+ 
+  <div class='profile-body-name'>Full Name: {{data.firstname}} {{data.lastname}}</div>
+  <div class='profile-body-email'>Email: {{data.email}}</div>
+  <div class='profile-body-signup'>Member Since {{data.signup_time}}</div>
+  </div>
+   <div class='profile-body-icon'>
+    <img class='duck-icon' src="public/images/stevens-duck-icon.png" alt='duck-icon' height='200' width='200'>
+  </div>
+  </div>
+  <a href="/changepassword"><button class="btn btn-primary" >Change Pasesword</button></a>
+
+
+  {{!-- <div class='bottom-bar'>
+    
+    <div class='check-out'>
+      <a href="/check-out">
+      <div class='check-out-button'>
+      <img class='shop-cart-icon' src="public/images/shop-cart-icon.png">
+      Checkout!
+      
+      </div>
+      </a>
+    </div>
+  </div> --}}
+  {{!-- {{> (lookup . 'partial') }} --}}
+
+</section>
